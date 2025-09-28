@@ -1,0 +1,37 @@
+import React from 'react';
+
+/**
+ * A component that displays a greeting.
+ * It shows the provided name or "Guest" if no name is given.
+ * @param {object} props - The properties passed to the component.
+ * @param {string} [props.name] - The name to greet. Optional.
+ */
+function Greeting({ name }) {
+  return (
+    <h1 className="text-3xl font-bold text-gray-800">
+      {/* Use a ternary operator to conditionally render the name or "Guest" */}
+      Hello, {name ? name : "Guest"}!
+    </h1>
+  );
+}
+
+// Main App component to demonstrate the Greeting component's usage
+export default function App() {
+  return (
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center space-y-8 font-sans">
+      
+      {/* Example 1: Usage with the 'name' prop */}
+      <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+        <p className="text-sm text-gray-500 mb-2">Usage with a name prop:</p>
+        <Greeting name="Alice" />
+      </div>
+      
+      {/* Example 2: Usage without the 'name' prop */}
+      <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+        <p className="text-sm text-gray-500 mb-2">Usage without a name prop:</p>
+        <Greeting />
+      </div>
+
+    </div>
+  );
+}
